@@ -1,0 +1,87 @@
+@rascal-red: #C6433C;
+@rascal-red-light: @rascal-red + #222;
+@rascal-red-extra-light: @rascal-red + #444;
+@rascal-red-super-light: #FFC7C0;
+@rascal-dark: @rascal-red - #222;
+@rascal-gray: #414243;
+@rascal-white: #E7E8E9;
+@rascal-complement: #51A8CB;
+@rascal-forum-bg: #CCCCCC;
+@rascal-dark-blue: #475373;
+@rascal-bright-white: #F5F5F5;
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.0em;
+    background-color: @rascal-white;
+}
+
+.site-head {
+    margin-bottom: 0px;
+}
+
+.post {
+    max-width: 820px;
+    background-color: @rascal-bright-white;
+    margin-top: 0px;
+    padding-top: 60px;
+}
+
+ul.nav li {
+    display: inline;
+    list-style-type: none;
+}
+
+.nav {
+    position: relative;
+    left: 0;
+    display: block;
+    float: left;
+    margin: 23px 10px 0 0;
+    padding-left: 0px;
+}
+
+.brand {
+    display: inline;
+    float: left;
+    padding: 8px 20px 12px;
+    margin-left: -20px;
+}
+
+.navbar-fill .container {
+    width: 80%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-fill {
+    width: 100%;
+    background: @rascal-gray;
+    color: @rascal-white;
+    float: left;
+}
+
+ul.nav li a {
+    padding-top: 23px;
+    padding-right: 16px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+    font-size: 20px;
+    line-height: 20px;
+    color: darken(@rascal-white, 15);
+    text-decoration: none;
+}
+
+ul.nav li a:hover {
+    color: @rascal-white;
+}
+
+div.center-column {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 940px;
+    background-color: @rascal-bright-white;
+}

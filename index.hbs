@@ -5,35 +5,50 @@
 
 {{! The big featured header on the homepage, with the site logo and description }}
 <header class="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-    <div class="vertical">
-        <div class="site-head-content inner">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-            <h1 class="blog-title">{{@blog.title}}</h1>
-            <h2 class="blog-description">{{@blog.description}}</h2>
+    <div class="navbar-fill">
+        <div class="container">
+            <a class="brand" href="/"><img src="http://rascalmicro.com/img/rm-logo-words-only-light.png"></a>
+            <ul class="nav">
+                <li class="active"><a href="http://store.rascalmicro.com">Store</a></li>
+                <li><a href="/about.htm">About</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/forum/">Forum</a></li>
+                <li><a href="/docs/">Docs</a></li>
+            </ul>
         </div>
     </div>
+    <script type="text/javascript">
+      function activateNavbar() { // From https://gist.github.com/1362111, but with the regex tweaked
+        var path = location.pathname.replace (/^(\/.+?\/).+$/, '$1');
+        $('ul.nav li').removeClass("active");
+        $('ul.nav a[href="' + path + '"]').parent().addClass("active");
+      }
+      $(function(){
+        activateNavbar();
+      })
+    </script>
 </header>
 
 {{! The main content area on the homepage }}
 <main class="content" role="main">
+    <div class="center-column">
+        {{! Each post will be output using this markup }}
+        {{#foreach posts}}
 
-    {{! Each post will be output using this markup }}
-    {{#foreach posts}}
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
 
-    <article class="{{post_class}}">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt}}&hellip;</p>
+            </section>
+        </article>
 
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
-        </section>
-    </article>
+        {{/foreach}}
 
-    {{/foreach}}
-
-    {{!! After all the posts, we have the previous/next pagination links }}
-    {{pagination}}
-
+        {{!! After all the posts, we have the previous/next pagination links }}
+        {{pagination}}
+    </div>
 </main>
