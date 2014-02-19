@@ -3,20 +3,31 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+    <div class="navbar-fill">
+        <div class="container">
+            <a class="brand" href="/"><img src="http://rascalmicro.com/img/rm-logo-words-only-light.png"></a>
+            <ul class="nav">
+                <li class="active"><a href="http://store.rascalmicro.com">Store</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/docs/">Docs</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+      function activateNavbar() { // From https://gist.github.com/1362111, but with the regex tweaked
+        var path = location.pathname.replace (/^(\/.+?\/).+$/, '$1');
+        $('ul.nav li').removeClass("active");
+        $('ul.nav a[href="' + path + '"]').parent().addClass("active");
+      }
+      $(function(){
+        activateNavbar();
+      })
+    </script>
+
 <main class="content" role="main">
 
     <article class="{{post_class}}">
-
-        {{! Each post has the blog logo at the top, with a link back to the home page }}
-        <header class="post-header">
-            <a class="blog-logo" href="{{@blog.url}}">
-                {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
-                {{else}}
-                    <span class="blog-title">{{@blog.title}}</span>
-                {{/if}}
-            </a>
-        </header>
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
