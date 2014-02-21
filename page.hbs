@@ -26,19 +26,13 @@
     </script>
 
 <main class="content" role="main">
-
-    <article class="{{post_class}}">
-
-        {{#post}}
-
-            <h1 class="post-title">{{{title}}}</h1>
-
-            <section class="post-content">
-                {{content}}
-            </section>
-
-        {{/post}}
-
-    </article>
-
+    <div class="center-column">
+        <article class="{{post_class}}">
+            {{#post}}
+                <section class="post-content">
+                    {{content}}
+                </section>
+            {{/post}}
+        </article>
+    </div>
 </main>

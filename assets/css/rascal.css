@@ -4,6 +4,32 @@ body {
   line-height: 1.0em;
   background-color: #e7e8e9;
 }
+p {
+  line-height: 1.6em;
+}
+h1.post-title {
+  font-size: 30px;
+  color: #414243;
+}
+h2 {
+  font-size: 24px;
+  letter-spacing: 0px;
+  text-indent: 0px;
+}
+h2 a {
+  color: #414243;
+}
+a:hover {
+  color: #c6433c;
+}
+h3 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+h5 {
+  font-size: 12px;
+}
 .site-head {
   margin-bottom: 0px;
 }
@@ -11,9 +37,14 @@ body {
   max-width: 820px;
   background-color: #f5f5f5;
   margin-top: 0px;
-  padding-top: 60px;
+  padding-top: 80px;
   position: static;
   /* to prevent weird overlap on page.hbs */
+}
+.post-footer {
+  margin-top: 0px;
+  padding-top: 20px;
+  border-top: #414243 1px solid;
 }
 ul.nav li {
   display: inline;
