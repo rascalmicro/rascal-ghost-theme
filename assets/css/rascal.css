@@ -6,6 +6,8 @@ body {
 }
 p {
   line-height: 1.6em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 h1.post-title {
   font-size: 30px;
@@ -19,6 +21,7 @@ h2 {
 h2 a {
   color: #414243;
 }
+a,
 a:hover {
   color: #c6433c;
 }
@@ -37,7 +40,9 @@ h5 {
   max-width: 820px;
   background-color: #f5f5f5;
   margin-top: 0px;
-  padding-top: 80px;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
   position: static;
   /* to prevent weird overlap on page.hbs */
 }
@@ -45,6 +50,13 @@ h5 {
   margin-top: 0px;
   padding-top: 20px;
   border-top: #414243 1px solid;
+}
+ul li {
+  line-height: 1.6em;
+}
+ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 ul.nav li {
   display: inline;
